@@ -100,7 +100,7 @@ services:
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
-    network_mode: host
+    # network_mode: host
     environment:
       - PUID=1000
       - PGID=1000
@@ -108,6 +108,6 @@ services:
       - PLEX_CLAIM= #optional
     volumes:
       - /Users/aspanu/Media:/Media
-    # ports:
-    #   - 32400:32400
+    ports:
+      - 32400:32400
     restart: unless-stopped
